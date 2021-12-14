@@ -7,12 +7,12 @@ const Clarifai = require('clarifai');
 const signin = require('/controllers/signin');
 const { restart } = require('nodemon');
 
-const app = new Clarifai.App({
+const app2 = new Clarifai.App({
     apiKey: '9a169df65b974780a0ed8ca16aa6e07e'
    });
 
    const handleAPI = (req,res) =>{
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+    app2.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
     .then(data => {
         res.json(data)
     })
